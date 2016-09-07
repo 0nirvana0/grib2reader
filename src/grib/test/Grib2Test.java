@@ -16,6 +16,7 @@ import ucar.nc2.grib.grib2.Grib2SectionIdentification;
 import ucar.nc2.grib.grib2.Grib2SectionIndicator;
 import ucar.nc2.grib.grib2.Grib2SectionLocalUse;
 import ucar.nc2.grib.grib2.Grib2SectionProductDefinition;
+import ucar.nc2.grib.grib2.table.Grib2Customizer;
 import ucar.unidata.io.RandomAccessFile;
 
 public class Grib2Test {
@@ -98,9 +99,9 @@ public class Grib2Test {
 				float value1 = (float) tempPds.getLevelValue1();
 				int type2 = tempPds.getLevelType2();
 				double value2 = tempPds.getLevelValue2();
-
+				
+				 Grib2Customizer gc2 = Grib2Customizer.factory(gr2);
 				// 从xml中读取层高类型
-				// Grib2Customizer gc2 = Grib2Customizer.factory(gr2);
 				// String type1str = gc2.getLevelName(type1);
 				// String type2str = gc2.getLevelName(type2);
 				//
