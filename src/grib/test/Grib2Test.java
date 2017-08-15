@@ -26,7 +26,7 @@ public class Grib2Test {
 	 */
 	public static void main(String[] args) {
 		//String path = "E:/data/Z_NWGD_C_BABJ_20160729232241_P_RFFC_SCMOC-ER03_201607300800_24003.GRB2";
-		 String path = "E:/data/EN_GRAB2/20160731/Z_NWGD_C_BABJ_20160730203316_P_RFFC_SCMOC-TMAX_201607310800_24024.GRB2";
+		 String path = "data/华北Z_NAFP_C_BEPK_20170802120000_P_all-RMAPS-f48.BIN";
 		TestReadGrab2(path);
 	}
 
