@@ -70,38 +70,38 @@ public abstract class Grib2Gds {
       case 0:
         result = new LatLon(data);
         break;
-//      case 1:
-//        result = new RotatedLatLon(data);
-//        break;
-//      case 10:
-//        result = new Mercator(data);
-//        break;
-//      case 20:
-//        result = new PolarStereographic(data);
-//        break;
-//      case 30:
-//        result = new LambertConformal(data, 30);
-//        break;
-//      case 31:
-//        result = new AlbersEqualArea(data);
-//        break;
-//      case 40:
-//        result = new GaussLatLon(data);
-//        break;
-//      case 50:  // Spherical Harmonic Coefficients BOGUS
-//        result = new GdsSpherical(data, template);
-//        break;
-//      case 90:
-//        result = new SpaceViewPerspective(data);
-//        break;
-//
-//      // LOOK NCEP specific
-//      case 204:
-//        result = new CurvilinearOrthogonal(data);
-//        break;
-//      case 32769:
-//        result = new RotatedLatLon32769(data);
-//        break;
+      case 1:
+        result = new RotatedLatLon(data);
+        break;
+      case 10:
+        result = new Mercator(data);
+        break;
+      case 20:
+        result = new PolarStereographic(data);
+        break;
+      case 30:
+        result = new LambertConformal(data, 30);
+        break;
+      case 31:
+        result = new AlbersEqualArea(data);
+        break;
+      case 40:
+        result = new GaussLatLon(data);
+        break;
+      case 50:  // Spherical Harmonic Coefficients BOGUS
+        result = new GdsSpherical(data, template);
+        break;
+      case 90:
+        result = new SpaceViewPerspective(data);
+        break;
+
+      // LOOK NCEP specific
+      case 204:
+        result = new CurvilinearOrthogonal(data);
+        break;
+      case 32769:
+        result = new RotatedLatLon32769(data);
+        break;
 
       default:
         throw new UnsupportedOperationException("未开发   Unsupported GDS type = " + template);
