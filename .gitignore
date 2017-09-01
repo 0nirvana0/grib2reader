@@ -1,5 +1,5 @@
 # Ignore eclipse project files
-#.classpath
+.classpath
 #.project
 .settings/
 bin/

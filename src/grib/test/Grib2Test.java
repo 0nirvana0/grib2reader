@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import ucar.nc2.grib.grib2.Grib2Gds;
+import ucar.nc2.grib.grib2.Grib2Gds.LambertConformal;
 import ucar.nc2.grib.grib2.Grib2Gds.LatLon;
 import ucar.nc2.grib.grib2.Grib2Pds;
 import ucar.nc2.grib.grib2.Grib2Record;
@@ -78,6 +79,17 @@ public class Grib2Test {
 				section3.append("Length ").append(gds.getLength()).append(",");
 				section3.append("NumberPoints ").append(tempGds.getNyRaw() + "*" + tempGds.getNxRaw() + "=" + gds.getNumberPoints()).append(",");
 				String gdsStr = null;
+			
+				if ("LambertConformal".equalsIgnoreCase(tempGds.getNameShort())) {
+					//lambertConformal  投影坐标范围
+					LambertConformal lc=(LambertConformal)tempGds;
+					
+					String la = "la:" + lc.la1 + "~" + lc.lad + ",deltaLat:" + lc.dY + ",";
+					String lo = "lo:" + lc.lo1 + "~" + lc.lov + ",deltaLon:" + lc.dX + ",";
+					gdsStr = la + lo;
+				}
+				
+				
 				if (tempGds.isLatLon()) {
 					// 经纬度范围
 					LatLon ll = (LatLon) tempGds;
